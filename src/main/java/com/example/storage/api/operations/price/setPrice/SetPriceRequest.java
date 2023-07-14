@@ -1,4 +1,4 @@
-package com.example.storage.api.operations.itemStorage.importItem;
+package com.example.storage.api.operations.price.setPrice;
 
 import lombok.*;
 
@@ -9,9 +9,7 @@ import java.util.UUID;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class ImportItemResponse {
+public class SetPriceRequest {
     private UUID id;
-    private UUID item;
-    private int quantity;
     private double price;
 }

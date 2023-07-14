@@ -1,9 +1,8 @@
 package com.example.storage.business.operations.item;
 
-import com.example.storage.api.operations.itemStorage.createItem.CreateItemResponse;
-import com.example.storage.api.operations.itemStorage.importItem.ImportItemOperation;
-import com.example.storage.api.operations.itemStorage.importItem.ImportItemRequest;
-import com.example.storage.api.operations.itemStorage.importItem.ImportItemResponse;
+import com.example.storage.api.operations.quantity.importItem.ImportItemOperation;
+import com.example.storage.api.operations.quantity.importItem.ImportItemRequest;
+import com.example.storage.api.operations.quantity.importItem.ImportItemResponse;
 import com.example.storage.data.models.ItemStorage;
 import com.example.storage.data.repositories.ItemStorageRepository;
 import com.example.storage.exceptions.NotEnoughQuantityOfSelectedItemException;

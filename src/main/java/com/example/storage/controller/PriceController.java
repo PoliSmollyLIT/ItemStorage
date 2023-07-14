@@ -1,8 +1,7 @@
 package com.example.storage.controller;
 
-import com.example.storage.api.operations.itemStorage.setPrice.SetPriceOperation;
-import com.example.storage.api.operations.itemStorage.setPrice.SetPriceRequest;
-import com.example.storage.business.operations.price.SetPriceImpl;
+import com.example.storage.api.operations.price.setPrice.SetPriceOperation;
+import com.example.storage.api.operations.price.setPrice.SetPriceRequest;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;

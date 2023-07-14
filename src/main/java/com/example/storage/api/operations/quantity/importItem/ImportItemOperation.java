@@ -1,4 +1,4 @@
-package com.example.storage.api.operations.itemStorage.importItem;
+package com.example.storage.api.operations.quantity.importItem;
 
 import com.example.storage.exceptions.NotEnoughQuantityOfSelectedItemException;
 
