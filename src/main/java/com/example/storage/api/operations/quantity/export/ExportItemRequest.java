@@ -1,4 +1,4 @@
-package com.example.storage.api.operations.quantity.importItem;
+package com.example.storage.api.operations.quantity.export;
 
 import com.example.storage.api.operations.base.OperationInput;
 import lombok.*;
@@ -10,7 +10,8 @@ import java.util.UUID;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class ImportItemRequest implements OperationInput {
+public class ExportItemRequest implements OperationInput {
     private UUID id;
     private int quantity;
+
 }
