@@ -5,6 +5,7 @@ import com.example.storage.api.operations.quantity.export.ExportItemRequest;
 import com.example.storage.api.operations.quantity.export.ExportItemResponse;
 import com.example.storage.persistance.models.ItemStorage;
 import com.example.storage.persistance.repositories.ItemStorageRepository;
+import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -14,7 +15,7 @@ public class ExportItemImpl implements ExportItemOperation {
     private final ItemStorageRepository itemStorageRepository;
     @Override
     public ExportItemResponse process(ExportItemRequest exportItemRequest) {
-        ItemStorage storage = itemStorageRepository.findItemStorageById(exportItemRequest.getId());
+        ItemStorage storage = itemStorageRepository.findItemStorageById(exportItemRequest.getId()).orElseThrow(()->new EntityNotFoundException("Item with this id does not exist"));
 
         storage.setQuantity(storage.getQuantity() - exportItemRequest.getQuantity());
         itemStorageRepository.save(storage);

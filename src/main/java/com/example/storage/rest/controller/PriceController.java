@@ -4,6 +4,7 @@ import com.example.storage.api.operations.price.set.SetPriceOperation;
 import com.example.storage.api.operations.price.set.SetPriceRequest;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -19,7 +20,7 @@ public class PriceController {
 
     @PostMapping("/set/{item_id}")
     @Operation()
-    ResponseEntity setPrice(@PathVariable UUID item_id, @RequestBody double price){
+    ResponseEntity setPrice(@Valid @PathVariable UUID item_id, @RequestBody double price){
         SetPriceRequest setPriceRequest = SetPriceRequest.builder()
                 .id(item_id)
                 .price(price)

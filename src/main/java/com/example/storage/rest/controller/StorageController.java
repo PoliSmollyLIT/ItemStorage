@@ -11,6 +11,7 @@ import com.example.storage.core.operations.item.ImportItemImpl;
 import com.example.storage.exceptions.NotEnoughQuantityOfSelectedItemException;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -28,19 +29,19 @@ public class StorageController {
     private final GetItemImpl getItem;
     @PostMapping("/import")
     @Operation(summary = "Create Item in Storage", description = "Creates a new Item into STorage")
-    ResponseEntity addItem(@RequestBody ImportItemRequest importItemRequest) throws NotEnoughQuantityOfSelectedItemException {
+    ResponseEntity addItem(@Valid @RequestBody ImportItemRequest importItemRequest) throws NotEnoughQuantityOfSelectedItemException {
         return ResponseEntity.ok(importItem.process(importItemRequest));
     }
 
     @PostMapping("/sell")
     @Operation(summary = "Sell Item from Storage", description = "Sells an existing Item from Storage")
-    ResponseEntity sellItem(@RequestBody ExportItemRequest exportItemRequest) throws NotEnoughQuantityOfSelectedItemException {
+    ResponseEntity sellItem(@Valid @RequestBody ExportItemRequest exportItemRequest) throws NotEnoughQuantityOfSelectedItemException {
         return ResponseEntity.ok(exportItem.process(exportItemRequest));
     }
 
     @PostMapping("/create")
     @Operation(summary = "Create Item in Storage", description = "Creates a new Item into Storage")
-    ResponseEntity createItem(@RequestBody CreateItemRequest createItemRequest){
+    ResponseEntity createItem(@Valid @RequestBody CreateItemRequest createItemRequest){
         return ResponseEntity.ok(createItem.process(createItemRequest));
     }
 

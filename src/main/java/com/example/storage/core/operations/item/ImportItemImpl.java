@@ -5,6 +5,7 @@ import com.example.storage.api.operations.quantity.importItem.ImportItemRequest;
 import com.example.storage.api.operations.quantity.importItem.ImportItemResponse;
 import com.example.storage.persistance.models.ItemStorage;
 import com.example.storage.persistance.repositories.ItemStorageRepository;
+import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -15,7 +16,7 @@ public class ImportItemImpl implements ImportItemOperation {
 
     @Override
     public ImportItemResponse process(ImportItemRequest importItemRequest) {
-        ItemStorage storage = itemStorageRepository.findItemStorageById(importItemRequest.getId());
+        ItemStorage storage = itemStorageRepository.findItemStorageById(importItemRequest.getId()).orElseThrow(()->new EntityNotFoundException("Item with this id does not exist"));
 
         storage.setQuantity(storage.getQuantity() + importItemRequest.getQuantity());
         itemStorageRepository.save(storage);
