@@ -8,7 +8,6 @@ import com.example.storage.core.operations.item.CreateItemImpl;
 import com.example.storage.core.operations.item.ExportItemImpl;
 import com.example.storage.core.operations.item.GetItemImpl;
 import com.example.storage.core.operations.item.ImportItemImpl;
-import com.example.storage.exceptions.NotEnoughQuantityOfSelectedItemException;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
@@ -29,13 +28,13 @@ public class StorageController {
     private final GetItemImpl getItem;
     @PostMapping("/import")
     @Operation(summary = "Create Item in Storage", description = "Creates a new Item into STorage")
-    ResponseEntity addItem(@Valid @RequestBody ImportItemRequest importItemRequest) throws NotEnoughQuantityOfSelectedItemException {
+    ResponseEntity addItem(@Valid @RequestBody ImportItemRequest importItemRequest) {
         return ResponseEntity.ok(importItem.process(importItemRequest));
     }
 
     @PostMapping("/sell")
     @Operation(summary = "Sell Item from Storage", description = "Sells an existing Item from Storage")
-    ResponseEntity sellItem(@Valid @RequestBody ExportItemRequest exportItemRequest) throws NotEnoughQuantityOfSelectedItemException {
+    ResponseEntity sellItem(@Valid @RequestBody ExportItemRequest exportItemRequest) {
         return ResponseEntity.ok(exportItem.process(exportItemRequest));
     }
 

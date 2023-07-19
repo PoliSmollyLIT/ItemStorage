@@ -7,6 +7,9 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
+//@ComponentScan(basePackages = {"com.example.storage"})
+//@EntityScan(basePackages = {"com.example.storage.persistance.models"})
+//@EnableJpaRepositories(basePackages = {"com.example.storage.persistance.repositories"})
 @ComponentScan(basePackages = {"com.example.storage"})
 @EntityScan(basePackages = {"com.example.storage.persistance.models"})
 @EnableJpaRepositories(basePackages = {"com.example.storage.persistance.repositories"})
