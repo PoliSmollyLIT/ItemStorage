@@ -39,6 +39,11 @@
             <artifactId>api</artifactId>
             <version>${revision}</version>
         </dependency>
+        <dependency>
+            <groupId>com.example.storage</groupId>
+            <artifactId>domain</artifactId>
+            <version>0.0.2-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 
 </project>
