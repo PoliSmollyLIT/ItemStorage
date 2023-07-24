@@ -13,11 +13,14 @@
     <artifactId>domain</artifactId>
     <version>${revision}</version>
 
-    <properties>
-        <maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
+    <repositories>
+        <repository>
+            <id>zoostore</id>
+            <name>ZooStore</name>
+            <url>file://C:/Users/${user.name}/.m2/repository/com/tinquinstore/ZoooStore</url>
+        </repository>
+    </repositories>
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
@@ -25,9 +28,9 @@
             <version>4.0.3</version>
         </dependency>
         <dependency>
-            <groupId>com.example.zooostore</groupId>
+            <groupId>com.tinquinstore.zooostore</groupId>
             <artifactId>restexport</artifactId>
-            <version>${revision}</version>
+            <version>${zoostore.version}</version>
         </dependency>
         <dependency>
             <groupId>io.github.openfeign</groupId>

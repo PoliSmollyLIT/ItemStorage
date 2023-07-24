@@ -16,8 +16,7 @@ public class ExportItemImpl implements ExportItemOperation {
     @Override
     public ExportItemResponse process(ExportItemRequest exportItemRequest) {
         ItemStorage storage = itemStorageRepository.findItemStorageById(exportItemRequest.getId()).orElseThrow(()->new EntityNotFoundException("Item with this id does not exist"));
-
-        storage.setQuantity(storage.getQuantity() - exportItemRequest.getQuantity());
+        storage.setQuantity(storage.getQuantity() + exportItemRequest.getQuantity());
         itemStorageRepository.save(storage);
         ExportItemResponse response = ExportItemResponse.builder()
                 .id(storage.getId())

@@ -32,23 +32,17 @@
         <dependency>
             <groupId>com.example.storage</groupId>
             <artifactId>api</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <version>${revision}</version>
         </dependency>
         <dependency>
             <groupId>com.example.storage</groupId>
             <artifactId>core</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <version>${revision}</version>
         </dependency>
         <dependency>
             <groupId>com.example.storage</groupId>
             <artifactId>domain</artifactId>
-            <version>0.0.2-SNAPSHOT</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.example.storage</groupId>
-            <artifactId>domain</artifactId>
-            <version>0.0.2-SNAPSHOT</version>
+            <version>${revision}</version>
             <scope>compile</scope>
         </dependency>
     </dependencies>
@@ -60,7 +54,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <mainClass>com.example.storage.rest.controller.StorageApplication</mainClass>
+                    <mainClass>com.example.storage.rest.StorageApplication</mainClass>
                 </configuration>
                 <executions>
                     <execution>

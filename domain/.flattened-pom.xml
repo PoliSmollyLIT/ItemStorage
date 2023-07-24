@@ -19,9 +19,9 @@
       <scope>compile</scope>
     </dependency>
     <dependency>
-      <groupId>com.example.zooostore</groupId>
+      <groupId>com.tinquinstore.zooostore</groupId>
       <artifactId>restexport</artifactId>
-      <version>0.0.2-SNAPSHOT</version>
+      <version>0.0.3-SNAPSHOT</version>
       <scope>compile</scope>
     </dependency>
     <dependency>
@@ -56,4 +56,11 @@
       <scope>compile</scope>
     </dependency>
   </dependencies>
+  <repositories>
+    <repository>
+      <id>zoostore</id>
+      <name>ZooStore</name>
+      <url>file://C:/Users/Polina/.m2/repository/com/tinquinstore/ZoooStore</url>
+    </repository>
+  </repositories>
 </project>

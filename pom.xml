@@ -11,13 +11,18 @@
     <groupId>com.example</groupId>
     <artifactId>Storage</artifactId>
     <version>${revision}</version>
+
     <name>Storage</name>
     <description>Storage</description>
+
     <packaging>pom</packaging>
+
     <properties>
         <java.version>17</java.version>
         <revision>0.0.2-SNAPSHOT</revision>
+        <zoostore.version>0.0.3-SNAPSHOT</zoostore.version>
     </properties>
+
     <dependencies>
 <!--        <dependency>-->
 <!--            <groupId>org.springframework.boot</groupId>-->

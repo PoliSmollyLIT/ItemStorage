@@ -15,14 +15,12 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class CreateItemImpl implements CreateItemOperation {
     private final ItemStorageRepository itemStorageRepository;
-
     private final ZooStoreRestClient zooStoreRestClient;
     @Override
     public CreateItemResponse process(CreateItemRequest createItemRequest) {
 
-        System.out.println();
        try{
-           GetItemResponse response = zooStoreRestClient.getItemById(createItemRequest.getItem());
+           GetItemResponse response = zooStoreRestClient.getItemById(String.valueOf(createItemRequest.getItem()));
        }catch (Exception e){
            throw new EntityNotFoundException("There is no such item");
        }

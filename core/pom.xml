@@ -42,7 +42,7 @@
         <dependency>
             <groupId>com.example.storage</groupId>
             <artifactId>domain</artifactId>
-            <version>0.0.2-SNAPSHOT</version>
+            <version>${revision}</version>
         </dependency>
     </dependencies>
 

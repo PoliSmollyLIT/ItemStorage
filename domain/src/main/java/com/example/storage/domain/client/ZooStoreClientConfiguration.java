@@ -14,9 +14,10 @@ import org.springframework.http.codec.json.Jackson2JsonEncoder;
 @Configuration
 @RequiredArgsConstructor
 public class ZooStoreClientConfiguration {
-     @Bean
-     ZooStoreRestClient getRestExportClient() {
+     @Bean(name = "ZoosStoreRestClient")
+    public ZooStoreRestClient getRestExportClient() {
             final ObjectMapper objectMapper = new ObjectMapper();
+            objectMapper.findAndRegisterModules();
             return Feign.builder()
                     .encoder(new JacksonEncoder(objectMapper))
                     .decoder(new JacksonDecoder(objectMapper))
