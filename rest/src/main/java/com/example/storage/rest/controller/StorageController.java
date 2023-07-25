@@ -49,7 +49,7 @@ public class StorageController {
     }
 
     @GetMapping("/{id}")
-    ResponseEntity getItem(@RequestParam UUID id){
+    ResponseEntity getItem(@PathVariable UUID id){
         GetItemRequest item = GetItemRequest.builder()
                 .id(id)
                 .build();

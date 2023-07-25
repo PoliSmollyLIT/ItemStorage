@@ -9,24 +9,19 @@
         <version>${revision}</version>
     </parent>
 
+
     <groupId>com.example.storage</groupId>
-    <artifactId>api</artifactId>
+    <artifactId>restexport</artifactId>
     <version>${revision}</version>
 
-    <dependencies>
+
+     <dependencies>
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-jpa</artifactId>
+            <groupId>com.example.storage</groupId>
+            <artifactId>api</artifactId>
+            <version>${revision}</version>
+            <scope>compile</scope>
         </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>jakarta.validation</groupId>
-            <artifactId>jakarta.validation-api</artifactId>
-            <version>3.0.2</version>
-        </dependency>
-    </dependencies>
+     </dependencies>
 
 </project>
