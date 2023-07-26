@@ -9,5 +9,7 @@ import java.util.UUID;
 
 public interface ItemStorageRepository extends JpaRepository<ItemStorage, UUID> {
     Optional<ItemStorage> findItemStorageById(UUID id);
-    Set<ItemStorage> findItemStorageByItem(UUID itemId);
+   // Set<ItemStorage> findItemStorageByItem(UUID itemId);
+
+    Optional<ItemStorage> findItemStorageByItem(UUID id);
 }
