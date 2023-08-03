@@ -2,11 +2,14 @@ package com.example.storage.rest.controller;
 
 import com.example.storage.api.operations.itemStorage.create.CreateItemRequest;
 import com.example.storage.api.operations.itemStorage.get.GetItemRequest;
+import com.example.storage.api.operations.itemStorage.getall.GetAllRequest;
+import com.example.storage.api.operations.itemStorage.getall.GetAllResponse;
 import com.example.storage.api.operations.price.set.SetPriceOperation;
 import com.example.storage.api.operations.price.set.SetPriceRequest;
 import com.example.storage.api.operations.quantity.export.ExportItemRequest;
 import com.example.storage.core.operations.item.CreateItemImpl;
 import com.example.storage.core.operations.item.ExportItemImpl;
+import com.example.storage.core.operations.item.GetAllItemsImpl;
 import com.example.storage.core.operations.item.GetItemImpl;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -26,6 +29,7 @@ public class StorageController {
     private final CreateItemImpl createItem;
     private final GetItemImpl getItem;
     private final SetPriceOperation setPrice;
+    private final GetAllItemsImpl getAll;
     @PutMapping("/quantity/{id}")
     @Operation(summary = "Create Item in Storage", description = "Creates a new Item into STorage")
     ResponseEntity addItem(@PathVariable UUID item_id, @Valid @RequestBody ExportItemRequest exportItemRequest) {
@@ -54,5 +58,13 @@ public class StorageController {
                 .id(id)
                 .build();
         return ResponseEntity.ok(getItem.process(item));
+    }
+
+    @PostMapping("/items")
+    ResponseEntity getAllItems(@RequestBody GetAllRequest request){
+        GetAllRequest requestItems = GetAllRequest.builder()
+                .items(request.getItems())
+                .build();
+        return ResponseEntity.ok(getAll.process(requestItems));
     }
 }

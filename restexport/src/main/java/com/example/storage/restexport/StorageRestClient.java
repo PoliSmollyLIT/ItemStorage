@@ -3,6 +3,8 @@ package com.example.storage.restexport;
 import com.example.storage.api.operations.itemStorage.create.CreateItemRequest;
 import com.example.storage.api.operations.itemStorage.create.CreateItemResponse;
 import com.example.storage.api.operations.itemStorage.get.GetItemResponse;
+import com.example.storage.api.operations.itemStorage.getall.GetAllRequest;
+import com.example.storage.api.operations.itemStorage.getall.GetAllResponse;
 import com.example.storage.api.operations.price.set.SetPriceRequest;
 import com.example.storage.api.operations.price.set.SetPriceResponse;
 import com.example.storage.api.operations.quantity.export.ExportItemRequest;
@@ -25,4 +27,7 @@ public interface StorageRestClient {
 
     @RequestLine("PUT /storage/price/{item_id}")
     SetPriceResponse setPrice(SetPriceRequest input);
+
+    @RequestLine("POST /storage/items")
+    GetAllResponse getAllItemsById(GetAllRequest input);
 }
