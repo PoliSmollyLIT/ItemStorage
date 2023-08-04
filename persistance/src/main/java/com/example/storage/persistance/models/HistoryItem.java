@@ -21,6 +21,7 @@ public class HistoryItem {
 
     private UUID item;
     private Integer quantity;
+    private Double price;
 
     @ManyToMany(mappedBy = "items")
     private List<Order> orders;

@@ -15,6 +15,11 @@ public class GetItemImpl implements GetItemOperation {
     private final ItemStorageRepository itemStorageRepository;
     @Override
     public GetItemResponse process(GetItemRequest getItemRequest) {
+        try {
+            Thread.sleep(500);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
         ItemStorage item = itemStorageRepository.findItemStorageByItem(getItemRequest.getId()).orElseThrow(()->new EntityNotFoundException("Item with this id does not exist"));
         GetItemResponse response = GetItemResponse.builder()
                 .id(item.getId())
