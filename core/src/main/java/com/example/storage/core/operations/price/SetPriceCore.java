@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class SetPriceImpl implements SetPriceOperation {
+public class SetPriceCore implements SetPriceOperation {
     private final ItemStorageRepository itemStorageRepository;
     @Override
     public SetPriceResponse process(SetPriceRequest setPriceRequest) {

@@ -6,12 +6,14 @@ import com.example.storage.api.operations.itemStorage.get.GetItemResponse;
 import com.example.storage.persistance.models.ItemStorage;
 import com.example.storage.persistance.repositories.ItemStorageRepository;
 import jakarta.persistence.EntityNotFoundException;
+import lombok.Builder;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class GetItemImpl implements GetItemOperation {
+@Builder
+public class GetItemCore implements GetItemOperation {
     private final ItemStorageRepository itemStorageRepository;
     @Override
     public GetItemResponse process(GetItemRequest getItemRequest) {

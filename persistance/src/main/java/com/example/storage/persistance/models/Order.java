@@ -3,6 +3,7 @@ package com.example.storage.persistance.models;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.SourceType;
 
 import java.sql.Timestamp;
 import java.time.LocalDate;
@@ -26,7 +27,7 @@ public class Order {
     private UUID user;
     private Double price;
 
-    @CreationTimestamp
+    @CreationTimestamp(source = SourceType.DB)
     @Column(nullable = false, updatable = false, insertable = false)
     private Timestamp timestamp;
 

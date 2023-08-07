@@ -5,6 +5,8 @@ import com.example.storage.api.operations.itemStorage.create.CreateItemResponse;
 import com.example.storage.api.operations.itemStorage.get.GetItemResponse;
 import com.example.storage.api.operations.itemStorage.getall.GetAllRequest;
 import com.example.storage.api.operations.itemStorage.getall.GetAllResponse;
+import com.example.storage.api.operations.order.add.OrderAddRequest;
+import com.example.storage.api.operations.order.add.OrderAddResponse;
 import com.example.storage.api.operations.price.set.SetPriceRequest;
 import com.example.storage.api.operations.price.set.SetPriceResponse;
 import com.example.storage.api.operations.quantity.export.ExportItemRequest;
@@ -30,4 +32,7 @@ public interface StorageRestClient {
 
     @RequestLine("POST /storage/items")
     GetAllResponse getAllItemsById(GetAllRequest input);
+
+    @RequestLine("POST /storage/order")
+    OrderAddResponse addOrder(OrderAddRequest request);
 }

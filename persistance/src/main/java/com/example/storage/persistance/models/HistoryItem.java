@@ -23,6 +23,6 @@ public class HistoryItem {
     private Integer quantity;
     private Double price;
 
-    @ManyToMany(mappedBy = "items")
+    @ManyToMany
     private List<Order> orders;
 }

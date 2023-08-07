@@ -3,19 +3,13 @@ package com.example.storage.core.operations.item;
 import com.example.storage.api.operations.itemStorage.getall.GetAllOperation;
 import com.example.storage.api.operations.itemStorage.getall.GetAllRequest;
 import com.example.storage.api.operations.itemStorage.getall.GetAllResponse;
-import com.example.storage.api.operations.itemStorage.getall.GetAllSingleItemResponse;
-import com.example.storage.persistance.models.ItemStorage;
 import com.example.storage.persistance.repositories.ItemStorageRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
-
 @Service
 @RequiredArgsConstructor
-public class GetAllItemsImpl implements GetAllOperation {
+public class GetAllItemsCore implements GetAllOperation {
     private final ItemStorageRepository itemStorageRepository;
     @Override
     public GetAllResponse process(GetAllRequest input) {

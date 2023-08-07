@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class CreateItemImpl implements CreateItemOperation {
+public class CreateItemCore implements CreateItemOperation {
     private final ItemStorageRepository itemStorageRepository;
     private final ZooStoreRestClient zooStoreRestClient;
     @Override

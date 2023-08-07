@@ -11,11 +11,12 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class ExportItemImpl implements ExportItemOperation {
+public class ExportItemCore implements ExportItemOperation {
     private final ItemStorageRepository itemStorageRepository;
     @Override
     public ExportItemResponse process(ExportItemRequest exportItemRequest) {
-        ItemStorage storage = itemStorageRepository.findItemStorageById(exportItemRequest.getId()).orElseThrow(()->new EntityNotFoundException("Item with this id does not exist"));
+        ItemStorage storage = itemStorageRepository.findItemStorageByItem(exportItemRequest.getId())
+                .orElseThrow(()->new EntityNotFoundException("Item with this id does not exist"));
         storage.setQuantity(storage.getQuantity() + exportItemRequest.getQuantity());
         itemStorageRepository.save(storage);
         ExportItemResponse response = ExportItemResponse.builder()
