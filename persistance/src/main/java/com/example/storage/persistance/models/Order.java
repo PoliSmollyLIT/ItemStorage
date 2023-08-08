@@ -31,6 +31,6 @@ public class Order {
     @Column(nullable = false, updatable = false, insertable = false)
     private Timestamp timestamp;
 
-    @ManyToMany(mappedBy = "orders")
+    @OneToMany(mappedBy = "order")
     private List<HistoryItem> items;
 }

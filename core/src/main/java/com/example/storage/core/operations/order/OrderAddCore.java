@@ -49,26 +49,36 @@ public class OrderAddCore implements OrderAddOpeartion {
                             .build());
                 });
 
-        request.getItems().stream().forEach(item->{
-            historyItemRepository.save(HistoryItem.builder()
-                            .item(item.getId())
-                            .price(item.getPrice())
-                            .quantity(item.getQuantity())
-                    .build());
-        });
-
         Order order = Order.builder()
                 .price(request.getPrice())
-                .items(request.getItems().stream()
-                        .map(item -> {
-                                    HistoryItem hItem = historyItemRepository.findHistoryItemByItem(item.getId())
-                                            .orElseThrow(() -> new EntityNotFoundException("History item with this ID does not exist"));
-                               return hItem;
-                                }
-                        ).collect(Collectors.toList()))
                 .user(request.getUser())
                 .build();
         orderRepository.save(order);
+
+        request.getItems().stream().forEach(item->{
+            historyItemRepository.save(HistoryItem.builder()
+                    .item(item.getId())
+                    .price(item.getPrice())
+                    .quantity(item.getQuantity())
+                    .order(order)
+                    .build());
+        });
+
+        /*
+        *  .items(request.getItems().stream()
+                        .map(item -> {
+                                    HistoryItem hItem = historyItemRepository.save(HistoryItem.builder()
+                                            .item(item.getId())
+                                            .price(item.getPrice())
+                                            .quantity(item.getQuantity())
+                                            .build());
+//
+//                                    HistoryItem hItem = historyItemRepository.findHistoryItemByItem(item.getId())
+//                                            .orElseThrow(() -> new EntityNotFoundException("History item with this ID does not exist"));
+//                               return hItem;
+                                }
+                        ).collect(Collectors.toList()))
+        * */
         return OrderAddResponse.builder().result("Sucessfully added order").build();
     }
 }

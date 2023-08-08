@@ -22,7 +22,6 @@ public class HistoryItem {
     private UUID item;
     private Integer quantity;
     private Double price;
-
-    @ManyToMany
-    private List<Order> orders;
+    @ManyToOne
+    private Order order;
 }
