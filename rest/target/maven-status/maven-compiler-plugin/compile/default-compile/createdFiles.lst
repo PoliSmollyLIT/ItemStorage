@@ -1,0 +1,3 @@
+com\example\storage\rest\controller\StorageController.class
+com\example\storage\rest\advices\GlobalExceptionHandler.class
+com\example\storage\rest\StorageApplication.class

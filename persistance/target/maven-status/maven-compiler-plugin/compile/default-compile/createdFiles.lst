@@ -1,0 +1,9 @@
+com\example\storage\persistance\repositories\OrderRepository.class
+com\example\storage\persistance\models\HistoryItem$HistoryItemBuilder.class
+com\example\storage\persistance\repositories\HistoryItemRepository.class
+com\example\storage\persistance\models\Order.class
+com\example\storage\persistance\models\HistoryItem.class
+com\example\storage\persistance\models\ItemStorage$ItemStorageBuilder.class
+com\example\storage\persistance\models\Order$OrderBuilder.class
+com\example\storage\persistance\models\ItemStorage.class
+com\example\storage\persistance\repositories\ItemStorageRepository.class

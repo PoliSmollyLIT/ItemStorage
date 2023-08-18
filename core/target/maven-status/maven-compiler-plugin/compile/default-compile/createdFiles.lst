@@ -1,0 +1,7 @@
+com\example\storage\core\operations\item\GetItemCore$GetItemCoreBuilder.class
+com\example\storage\core\operations\item\GetItemCore.class
+com\example\storage\core\operations\price\SetPriceCore.class
+com\example\storage\core\operations\item\CreateItemCore.class
+com\example\storage\core\operations\item\ExportItemCore.class
+com\example\storage\core\operations\item\GetAllItemsCore.class
+com\example\storage\core\operations\order\OrderAddCore.class
