@@ -15,5 +15,6 @@ public class OrderAddRequest implements OperationInput {
     private UUID cartID;
     private UUID user;
     private Double price;
+    private Double discount;
     private List<OrderAddOrderItem> items;
 }

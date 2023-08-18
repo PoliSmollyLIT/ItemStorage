@@ -51,6 +51,8 @@ public class OrderAddCore implements OrderAddOpeartion {
 
         Order order = Order.builder()
                 .price(request.getPrice())
+                .discount(request.getDiscount())
+                .finalPrice(request.getPrice()- request.getDiscount())
                 .user(request.getUser())
                 .build();
         orderRepository.save(order);

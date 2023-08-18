@@ -26,7 +26,8 @@ public class Order {
 
     private UUID user;
     private Double price;
-
+    private Double discount;
+    private Double finalPrice;
     @CreationTimestamp(source = SourceType.DB)
     @Column(nullable = false, updatable = false, insertable = false)
     private Timestamp timestamp;
