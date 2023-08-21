@@ -1,15 +1,13 @@
 package com.example.storage.domain.client;
 
-import com.example.zooostore.restexport.ZooStoreRestClient;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import feign.Contract;
+import com.tinquinstore.zooostore.restexport.ZooStoreRestClient;
 import feign.Feign;
 import feign.jackson.JacksonDecoder;
 import feign.jackson.JacksonEncoder;
+import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import lombok.RequiredArgsConstructor;
-import org.springframework.http.codec.json.Jackson2JsonEncoder;
 
 @Configuration
 @RequiredArgsConstructor

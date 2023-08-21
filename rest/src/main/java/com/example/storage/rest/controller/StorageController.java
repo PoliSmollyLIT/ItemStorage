@@ -17,7 +17,7 @@ import com.example.storage.core.operations.item.CreateItemCore;
 import com.example.storage.core.operations.item.ExportItemCore;
 import com.example.storage.core.operations.item.GetAllItemsCore;
 import com.example.storage.core.operations.item.GetItemCore;
-import com.example.zooostore.api.operations.item.getall.GetAllItemsOperation;
+import com.tinquinstore.zooostore.api.operations.item.getall.GetAllItemsOperation;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
